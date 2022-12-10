@@ -16,7 +16,7 @@ pub struct ReportCard<T> {
     pub student_age: u8,
 }
 
-impl <T: std::fmt::Display> ReportCard <T> {
+impl <T> ReportCard <T> where T: std::fmt::Display {
     pub fn print(&self) -> String {
         format!("{} ({}) - achieved a grade of {}",
             &self.student_name, &self.student_age, &self.grade)

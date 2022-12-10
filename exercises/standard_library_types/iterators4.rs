@@ -1,8 +1,13 @@
 // iterators4.rs
 
-// I AM NOT DONE
-
 pub fn factorial(num: u64) -> u64 {
+    let it = match num {
+        0 => return 0,
+        1 => return 1,
+        x => 1..(x+1),
+    };
+    dbg!(&it);
+    it.reduce(|accum, x| accum * x).unwrap()
     // Complete this function to return the factorial of num
     // Do not use:
     // - return
